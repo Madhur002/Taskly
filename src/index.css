@@ -1,0 +1,452 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+i {
+  cursor: pointer;
+  color: #ffffff;
+  /* color: #0275d8 ; */
+}
+
+.card-todo {
+  border-radius: 25px;
+  margin: 30px;
+}
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.242);
+  border: solid white;
+  color: rgb(0, 0, 0);
+  border: 3px solid black !important;
+  font-weight: 700;
+}
+
+.form-input:focus {
+  background-color: transparent;
+  border: solid white;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: 700;
+}
+
+.btn0 {
+  background-color: #000000;
+  padding: 10px 0;
+  border: none !important;
+}
+
+.btn0:hover {
+  background-color: #181818;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.btn-1 {
+  width: 100px;
+  background-color: black;
+  border: none;
+}
+
+.btn-1:hover .btn-icon1 {
+  color: #000000;
+}
+
+.btn-1:hover {
+  background-color: white;
+  color: #000000;
+  border: 2px solid black;
+}
+
+.btn-2 {
+  border: 2px solid #000000;
+  background-color: white;
+  color: #000000;
+  width: 100px;
+  margin-left: 5px;
+}
+.btn-2:hover {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border: 2px solid black;
+}
+
+.btn-icon1 {
+  color: #ffffff;
+}
+
+.btn-icon2 {
+  color: #000000;
+}
+
+.btn-2:hover .btn-icon2 {
+  color: white;
+}
+
+.modal-backdrop {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.171
+  ); /* set the background color with an alpha value for opacity */
+}
+
+.btn3,
+.btn4 {
+  background-color: rgb(102, 102, 102);
+  text-decoration: none;
+  color: white;
+  padding: 2px 12px;
+}
+
+.btn3:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgb(41, 41, 41);
+}
+
+.btn4:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgb(41, 41, 41);
+}
+
+.login-container {
+  background-image: url("./images/loginbackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.login-container h1 {
+  color: white;
+  font-size: 4rem;
+  font-family: "Rubik", sans-serif;
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.63);
+  height: 420px;
+  width: 400px;
+  border-radius: 30px;
+  margin-top: 30px;
+  border: 2px solid white;
+}
+
+.formcontrol {
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+}
+
+.formlabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(57, 11, 88);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.label1 {
+  margin-top: 40px;
+}
+
+.btn5 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 30px;
+  background: transparent;
+  color: rgb(14, 14, 14);
+  outline: none;
+  border: 2px solid black;
+}
+
+.home-bg {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("./images/homebackground2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.home-bg h1 {
+  color: white;
+  margin-top: 60px;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.home-bg h3 {
+  color: white;
+  margin-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.btn6 {
+  text-decoration: none;
+  color: #b319a6;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  margin-top: 120px;
+}
+
+.btn6:hover {
+  box-shadow: 0px 0px 80px rgba(255, 255, 255, 0.87);
+}
+
+.about-background {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("./images/aboutbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+}
+
+.todos-bg {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  margin-top: -16px;
+}
+
+.todos-heading {
+  font-family: "Rubik", sans-serif;
+  color: rgb(0, 0, 0);
+  padding-top: 50px;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+}
+
+.todos-heading3 {
+  font-family: "Rubik", sans-serif;
+  color: rgb(128, 37, 37);
+  padding-top: 20px;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  padding-bottom: 35px;
+}
+
+.todos-heading2 {
+  color: rgb(0, 0, 0);
+  padding-top: 50px;
+  font-size: 2.5rem;
+}
+
+.todos-heading {
+  color: black;
+}
+
+.form-container {
+  width: 40vw;
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    width: 80vw;
+  }
+  .home-bg h1 {
+    color: white;
+    margin-top: 60px;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .home-bg h3 {
+    color: white;
+    margin-top: 10px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .todos-heading3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    width: 90vw;
+  }
+  .home-bg h1 {
+    color: white;
+    margin-top: 60px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .home-bg h3 {
+    color: white;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .todos-heading3 {
+    font-size: 1rem;
+  }
+  
+}
+
+.btn7{
+  color: rgb(255, 255, 255);
+  background-color: #121212;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+
+.todo-title {
+  width: 80%;
+  color: rgb(40, 40, 40);
+}
+
+.linethrough {
+  text-decoration: line-through;
+}
+
+.moon {
+  color: black;
+  font-size: 1.3rem;
+  /* position: fixed; */
+  animation: rotateMoon 0.5s ease;
+}
+@keyframes rotateMoon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.dark-mode{
+  background-color: rgb(0, 0, 0);
+  color: white !important; 
+}
+
+.sun {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  /* position: fixed; */
+}
+
+
+/* Dark Mode Css */
+
+.todos-heading-dark {
+  color: rgb(255, 255, 255);
+  font-family: "Rubik", sans-serif;
+  padding-top: 50px;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+}
+
+.todos-heading2-dark {
+  padding-top: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+}
+
+.form-input-dark {
+  background-color: rgba(255, 255, 255, 0);
+  border: 3px solid #585858 !important;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.form-input-dark:focus {
+  background-color: transparent;
+  border: solid white;
+  color: rgb(180, 180, 180);
+  font-weight: 700;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-input-dark::placeholder {
+  color: rgb(159, 159, 159);
+  text-align: center;
+  font-weight: 700;
+  box-shadow: none;
+}                                         
+
+.btn0-dark {
+  background-color: #2a2a2a;
+  padding: 7px 0;
+  border: none !important;
+}
+
+.btn0-dark:hover {
+  background-color: #181818;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.rotate {
+  animation: rotate 0.5s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.card-todo-dark {
+  border-radius: 25px;
+  margin: 30px;
+  background-color: black;
+  border: 1px solid rgb(194, 194, 194)
+}
+
+.btn-1-dark {
+  width: 100px;
+  background-color: black;
+  border: none;
+}
+
+.btn-1-dark:hover .btn-icon1 {
+  color: #000000;
+}
+
+.btn-1-dark:hover {
+  background-color: white;
+  color: #000000;
+  border: 2px solid black;
+}
+
+.btn-2-dark {
+  border: 2px solid #000000;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  width: 100px;
+  margin-left: 5px;
+}
+.btn-2-dark:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: 2px solid black;
+}
+.btn-icon2-dark {
+  color: #ffffff;
+}
+
+.btn-2-dark:hover .btn-icon2-dark {
+  color: rgb(0, 0, 0);
+}
