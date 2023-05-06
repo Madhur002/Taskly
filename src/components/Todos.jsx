@@ -170,7 +170,7 @@ const Todos = () => {
         </div>
       </div>
       <div className="mode d-flex mt-3 justify-content-end">
-      <h6 style={{marginTop: "22px", fontWeight: "700"}}>{ mode === "dark" ? "Light Mode" : "Dark Mode"}</h6>
+      <h6 onClick={handleMode} style={{marginTop: "22px", fontWeight: "700"}}>{ mode === "dark" ? "Light Mode" : "Dark Mode"}</h6>
         <i
           onClick={handleMode}
           className={
