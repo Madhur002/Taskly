@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoContext from "./todoContext";
 const TodoState = (props) => {
-  const host = "https://taskly-backend.onrender.com";
+  // const host = "https://taskly-backend.onrender.com";
 
     const todosInitial = [];
     const [todos, setTodos] = useState(todosInitial);
@@ -9,7 +9,7 @@ const TodoState = (props) => {
     // GET ALL NOTES
     const getTodos = async () => {
       // API CALL
-      const response = await fetch (`${host}/api/todos/fetchtodos`,{
+      const response = await fetch (`/api/todos/fetchtodos`,{
         method: 'GET',
         headers: {
           'Content-Type' : 'application/json',
@@ -25,7 +25,7 @@ const TodoState = (props) => {
         // Add a todo
         const addTodo = async (title,description,tag) => {
           // API CALL
-          const response = await fetch (`${host}/api/todos/addtodos`,{
+          const response = await fetch (`/api/todos/addtodos`,{
             method: 'POST',
             headers: {
               'Content-Type' : 'application/json',
@@ -39,7 +39,7 @@ const TodoState = (props) => {
         // delte a todo
         const deleteTodo = async (id) => {
           //  API CALL
-            const response = await fetch (`${host}/api/todos/deletetodo/${id}`,{
+            const response = await fetch (`/api/todos/deletetodo/${id}`,{
               method: 'DELETE',
               headers: {
                 'Content-Type' : 'application/json',
@@ -53,7 +53,7 @@ const TodoState = (props) => {
         // Edit a todo
         const editTodo = async (id, title, description, tag) => {
           // API CALL
-          const response = await fetch (`${host}/api/todos/updatetodo/${id}`,{
+          const response = await fetch (`/api/todos/updatetodo/${id}`,{
             method: 'PUT',
             headers: {
               'Content-Type' : 'application/json',
