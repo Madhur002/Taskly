@@ -28,6 +28,10 @@ app.use(cors({
   origin: 'http://localhost:5000/api/auth/createuser'
 }));
 
+app.use(cors({
+  origin: 'http://localhost:5000/'
+}));
+
 // AVAILABLE ROUTES
 app.use("/api/auth", authRoutes);
 app.use("/api/todos", todosRoutes);
