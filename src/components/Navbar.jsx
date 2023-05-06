@@ -15,7 +15,7 @@ const NavbarComponent = () => {
     <>
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
-      <Navbar.Brand href="/" style={{letterSpacing: "5px", fontWeight: "500", marginLeft: "8px"}} >TASKY <i className="bi bi-app-indicator"></i></Navbar.Brand>
+      <Navbar.Brand href="/" style={{letterSpacing: "5px", fontWeight: "500", marginLeft: "8px"}} >TASKLY <i className="bi bi-app-indicator"></i></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import TodoContext from "./todoContext";
-
 const TodoState = (props) => {
-  const host = 'http://localhost:5000';
+  const host = "https://taskly-backend.onrender.com";
 
     const todosInitial = [];
     const [todos, setTodos] = useState(todosInitial);

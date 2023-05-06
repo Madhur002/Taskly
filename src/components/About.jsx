@@ -17,22 +17,22 @@ const About = () => {
           letterSpacing: "2px"
         }}
       >
-        Tasky is a user-friendly web application designed for Todo-Making and
-        management. With Tasky, you can create, edit, and delete your todos on
+        Taskly is a user-friendly web application designed for Todo-Making and
+        management. With Taskly, you can create, edit, and delete your todos on
         the cloud from anywhere with an internet connection. The app is perfect
         for students, professionals, and anyone who needs to keep their thoughts
-        organized and accessible. The sign-up process for Tasky is quick and
+        organized and accessible. The sign-up process for Taskly is quick and
         easy, and once you're in, you can start creating todos right away. The
         app's interface is intuitive and straightforward, making it easy to
         navigate and use. You can create as many todos as you need. Editing your
-        todos in Tasky is a breeze. The app also allows you to add tags to your
-        todos, making it easy to find them later on. Tasky's cloud-based storage
+        todos in Taskly is a breeze. The app also allows you to add tags to your
+        todos, making it easy to find them later on. Taskly's cloud-based storage
         means you can access your todos from any device with an internet
         connection. This feature is especially helpful for those who work on
-        multiple devices or need to access their todos on the go. With Tasky,
+        multiple devices or need to access their todos on the go. With Taskly,
         you'll never have to worry about losing your todos or forgetting them at
         home. If you need to delete a Todo, the app makes it easy to do so. You
-        can delete todos individually. Overall, Tasky is a reliable and
+        can delete todos individually. Overall, Taskly is a reliable and
         efficient Todo-Making app that allows you to create, edit, and delete
         todos on the cloud. With its user-friendly interface and robust
         features, it's the perfect tool for anyone who needs to keep their

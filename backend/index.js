@@ -3,11 +3,13 @@ import express from "express";
 import authRoutes from './routes/auth.js';
 import todosRoutes from './routes/todos.js';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 connectToMongo();
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 app.use(express.json());
 app.use(cors());
 // AVAILABLE ROUTES
