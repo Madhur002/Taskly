@@ -8,7 +8,7 @@ const Login = () => {
 
     const [credentials, setCredentials] = useState({email: "", password: ""});
     const navigate = useNavigate();
-    const host = 'http://localhost:5000';
+    const host = 'https://taskly-backend.onrender.com';
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch (`${host}/api/auth/login`,{

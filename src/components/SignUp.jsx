@@ -11,7 +11,7 @@ const SignUp = () => {
     password: "",
   });
   const navigate = useNavigate();
-  const host = "http://localhost:5000";
+  const host = "https://taskly-backend.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;

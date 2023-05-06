@@ -12,25 +12,6 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors());
-app.use(cors({
-  origin: 'https://taskly-backend.onrender.com/'
-}));
-
-app.use(cors({
-  origin: 'https://taupe-pony-c26ae1.netlify.app/'
-}));
-
-app.use(cors({
-  origin: 'http://localhost:5000/api/auth/login/'
-}));
-
-app.use(cors({
-  origin: 'http://localhost:5000/api/auth/createuser'
-}));
-
-app.use(cors({
-  origin: 'http://localhost:5000/'
-}));
 
 // AVAILABLE ROUTES
 app.use("/api/auth", authRoutes);
