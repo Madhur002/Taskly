@@ -20,6 +20,13 @@ app.use(cors({
   origin: 'https://taupe-pony-c26ae1.netlify.app/'
 }));
 
+app.use(cors({
+  origin: 'http://localhost:5000/api/auth/login/'
+}));
+
+app.use(cors({
+  origin: 'http://localhost:5000/api/auth/createuser'
+}));
 
 // AVAILABLE ROUTES
 app.use("/api/auth", authRoutes);
