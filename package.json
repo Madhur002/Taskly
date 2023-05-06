@@ -1,8 +1,9 @@
 {
-  "name": "Tasky",
+  "name": "Taskly",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy" : "https://taskly-backend.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
