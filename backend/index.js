@@ -16,6 +16,11 @@ app.use(cors({
   origin: 'https://taskly-backend.onrender.com/'
 }));
 
+app.use(cors({
+  origin: 'https://taupe-pony-c26ae1.netlify.app/'
+}));
+
+
 // AVAILABLE ROUTES
 app.use("/api/auth", authRoutes);
 app.use("/api/todos", todosRoutes);
