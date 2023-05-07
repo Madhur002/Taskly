@@ -459,3 +459,22 @@ i {
 .btn-2-dark:hover .btn-icon2-dark {
   color: rgb(0, 0, 0);
 }
+
+.navMenu:focus,
+.navMenu:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.rotatemenu {
+  animation: rotateMenu 0.25s ease ;
+}
+
+@keyframes rotateMenu {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

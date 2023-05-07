@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,6 +6,9 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation } from "react-router-dom";
 
 const NavbarComponent = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const handleLogout = () => {
     localStorage.removeItem('token');
   }
@@ -16,7 +19,7 @@ const NavbarComponent = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
       <Navbar.Brand href="/" style={{letterSpacing: "5px", fontWeight: "500", marginLeft: "8px"}} >TASKLY <i className="bi bi-app-indicator"></i></Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle aria-controls="navbarScroll" className={`${isMenuOpen ? 'rotatemenu border-0 navMenu' : 'border-0 navMenu'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}/>
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
