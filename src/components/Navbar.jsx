@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation } from "react-router-dom";
-
+import LogoImg from "../images/logo.png";
 const NavbarComponent = () => {
   // Set up the headers for the API request
   const headers = {
@@ -35,6 +35,7 @@ const NavbarComponent = () => {
     <>
       <Navbar variant="dark" expand="lg" className="navbar-light">
         <Container fluid>
+        <img src={LogoImg} height="45px" alt="logo" />
           <Navbar.Brand
             href="/"
             style={{
@@ -42,8 +43,7 @@ const NavbarComponent = () => {
               fontWeight: "500",
               marginLeft: "8px",
             }}
-          >
-            TASKLY <i className="bi bi-app-indicator"></i>
+          >ASKLY
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="navbarScroll"
