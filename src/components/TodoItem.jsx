@@ -6,7 +6,7 @@ import "../index.css";
 
 const TodoItem = (props) => {
   const context = useContext(todoContext);
-  const { todo, updateTodo, mode, handleMode } = props;
+  const { todo, updateTodo, mode } = props;
   const { deleteTodo } = context;
 
   const [isDone, setIsDone] = useState(false);
@@ -19,7 +19,7 @@ const TodoItem = (props) => {
   };
 
   return (
-    <div className="col">
+    <div className="col mobile">
       <Card
         className={
           mode === "dark" ? "card-todo-dark container" : "card-todo container"

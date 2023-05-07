@@ -10,7 +10,7 @@ i {
 
 .card-todo {
   border-radius: 25px;
-  margin: 30px;
+  margin: 15px;
 }
 
 .form-input {
@@ -269,6 +269,11 @@ i {
   .todos-heading3 {
     font-size: 1.5rem;
   }
+
+  .mobile{
+    display: flex !important;
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 400px) {
@@ -293,6 +298,10 @@ i {
     font-size: 1rem;
   }
   
+  .mobile{
+    display: flex !important;
+    justify-content: center !important;
+  }
 }
 
 .btn7{
@@ -410,7 +419,7 @@ i {
 
 .card-todo-dark {
   border-radius: 25px;
-  margin: 30px;
+  margin: 15px;
   background-color: black;
   border: 1px solid rgb(194, 194, 194)
 }
