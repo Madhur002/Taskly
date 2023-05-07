@@ -35,13 +35,13 @@ const NavbarComponent = () => {
     <>
       <Navbar variant="dark" expand="lg" className="navbar-light">
         <Container fluid>
-        <img src={LogoImg} height="45px" alt="logo" />
+        <img src={LogoImg} height="45px" alt="logo" style={{marginRight: "5px"}} />
           <Navbar.Brand
             href="/"
             style={{
               letterSpacing: "5px",
               fontWeight: "500",
-              marginLeft: "8px",
+              marginRight: "auto",
             }}
           >ASKLY
           </Navbar.Brand>
