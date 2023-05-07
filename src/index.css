@@ -226,8 +226,8 @@ i {
 }
 
 .todos-heading3 {
-  font-family: "Rubik", sans-serif;
-  color: rgb(128, 37, 37);
+  font-family: "Montserrat", sans-serif;
+  color: rgb(75, 75, 75);
   padding-top: 20px;
   font-size: 2rem;
   letter-spacing: 5px;
@@ -477,4 +477,8 @@ i {
   to {
     transform: rotate(180deg);
   }
+}
+
+.navbar-light{
+  background-color: black !important;
 }
