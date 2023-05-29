@@ -38,8 +38,14 @@ const Todos = () => {
     tag: "",
   });
 
+
+
   const handleClick = (e) => {
     e.preventDefault();
+    refClose.current.click();
+    editTodo(todo.id, todo.etitle, todo.edescription, todo.etag);
+    addTodo(todo.title, todo.description, todo.tag);
+    setTodo({ title: "", description: "", tag: "" });
 
     // Clear previous error messages
     setErrors({ title: "", description: "" });
@@ -62,18 +68,6 @@ const Todos = () => {
       isValid = false;
     }
 
-    // Display alert after 2 seconds
-    if (isValid) {
-      // Perform other actions if form is valid
-      refClose.current.click();
-      editTodo(todo.id, todo.etitle, todo.edescription, todo.etag);
-      addTodo(todo.title, todo.description, todo.tag);
-      setTodo({ title: "", description: "", tag: "" });
-
-      setTimeout(() => {
-        alert("Form submitted successfully!");
-      }, 2000);
-    }
   };
 
   const onChange = (e) => {
@@ -99,29 +93,6 @@ const Todos = () => {
     setMode(mode === "light" ? "dark" : "light");
   };
 
-  const filteredTodos = (
-    searchResults.length > 0 ? searchResults : todos
-  ).filter((todo) => {
-    if (filter === "all") {
-      return true;
-    } else if (filter === "active") {
-      return !todo.completed;
-    } else if (filter === "completed") {
-      return todo.completed;
-    }
-  });
-
-  filteredTodos.map((todo) => {
-    return (
-      <TodoItem
-        key={todo._id}
-        updateTodo={updateTodo}
-        mode={mode}
-        handleMode={handleMode}
-        todo={todo}
-      />
-    );
-  });
 
   const handleFilterChange = (selectedFilter) => {
     setFilter(selectedFilter);
@@ -250,7 +221,6 @@ const Todos = () => {
             className={`filter-button ${
               filter === "all" && "active"
             } my-1 mx-1 rounded-pill`}
-            onClick={() => handleFilterChange("all")}
           >
             <i className="bi bi-three-dots"></i>
           </Button>
@@ -258,7 +228,6 @@ const Todos = () => {
             className={`filter-button ${
               filter === "active" && "active"
             } my-1 mx-1 rounded-pill`}
-            onClick={() => handleFilterChange("active")}
           >
             <i className="bi bi-arrow-down-right-circle"></i>
           </Button>
@@ -266,7 +235,6 @@ const Todos = () => {
             className={`filter-button ${
               filter === "completed" && "active"
             } my-1 mx-1 rounded-pill`}
-            onClick={() => handleFilterChange("completed")}
           >
             <i className="bi bi-check-all"></i>
           </Button>
