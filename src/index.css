@@ -537,6 +537,7 @@ i {
 .search-ul{
   list-style-type: none;
   margin: 5px 0;
+  display: none;
 }
 
 .error-message {
@@ -550,4 +551,8 @@ i {
 .sidebar{
   margin-top: 40px;
   flex-direction: column;
+}
+
+.search-bar{
+  height: 30px;
 }

@@ -42,7 +42,7 @@ const SearchBar = ({ handleSearch }) => {
   }, [results, handleSearch]);
 
   return (
-    <div className='d-flex'>
+    <div className='d-flex search-bar'>
       <input
         className={`${isToggled === true ? 'Search-Input-none' : 'Search-Input'}`}
         type="text"
@@ -50,7 +50,7 @@ const SearchBar = ({ handleSearch }) => {
         onChange={handleInputChange}
         placeholder="Search tasks..."
       />
-      <button className="btn-search" onClick={handleSearchClick}><i className="bi bi-search"></i></button>
+      <button className="btn-search rounded-pill " onClick={handleSearchClick}><i className="bi bi-search"></i></button>
       {showResults && (
         <ul className={`${isToggled === true ? 'Search-Input-none' : 'search-ul'}`}>
           {results.map((todo) => (
