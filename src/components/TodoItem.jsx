@@ -69,7 +69,7 @@ const TodoItem = (props) => {
               style={{ border: mode === "dark" ? "2px solid white" : "" }}
             >
               Edit
-              <i className="bi bi-trash3-fill mx-2 rounded-circle btn-icon1"></i>
+              <i className="bi bi-pen-fill mx-2 rounded-circle btn-icon1"></i>
             </Button>
             <Button
               className={
@@ -88,8 +88,8 @@ const TodoItem = (props) => {
               <i
                 className={
                   mode === "dark"
-                    ? "bi bi-pen-fill mx-2 rounded-circle btn-icon2-dark"
-                    : "bi bi-pen-fill mx-2 rounded-circle btn-icon2"
+                    ? "bi bi-trash3-fill mx-2 rounded-circle btn-icon2-dark"
+                    : "bi bi-trash3-fill mx-2 rounded-circle btn-icon2"
                 }
               ></i>
             </Button>

@@ -4,6 +4,9 @@ import authRoutes from "./routes/auth.js";
 import todosRoutes from "./routes/todos.js";
 import cors from "cors";
 import dotenv from "dotenv";
+import Todos from "./models/Todos.js";
+import fetchuser from "./middleware/fetchuser.js";
+
 dotenv.config();
 
 connectToMongo();
@@ -19,6 +22,24 @@ app.use("/api/todos", todosRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World this is me !");
+});
+
+app.get('/search', async (req, res) => {
+  const query = req.query.query;
+
+  try {
+    const results = await Todos.find({
+      $or: [
+        { title: { $regex: query, $options: 'i' } }, // Case-insensitive search for title
+        { description: { $regex: query, $options: 'i' } }, // Case-insensitive search for description
+      ],
+    });
+
+    res.json(results);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred' });
+  }
 });
 
 app.listen(port, () => {

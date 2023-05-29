@@ -5,11 +5,23 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Todos = () => {
   const navigate = useNavigate();
   const context = useContext(todoContext);
-  const { todos, addTodo, getTodos, editTodo } = context;
+  const { todos, addTodo, getTodos, editTodo, handleRemoveCompleted } = context;
+  const [searchResults, setSearchResults] = useState([]);
+  const [errors, setErrors] = useState({
+    title: "",
+    description: "",
+  });
+  const [filter, setFilter] = useState("all");
+
+  // Function to handle search results
+  const handleSearch = (data) => {
+    setSearchResults(data);
+  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -28,10 +40,40 @@ const Todos = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    refClose.current.click();
-    editTodo(todo.id, todo.etitle, todo.edescription, todo.etag);
-    addTodo(todo.title, todo.description, todo.tag);
-    setTodo({ title: "", description: "", tag: "" });
+
+    // Clear previous error messages
+    setErrors({ title: "", description: "" });
+
+    // Validation
+    let isValid = true;
+    if (todo.title.length > 50) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        title: "Title should have a maximum length of 50 characters.",
+      }));
+      isValid = false;
+    }
+    if (todo.description.length > 256) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        description:
+          "Description should have a maximum length of 256 characters.",
+      }));
+      isValid = false;
+    }
+
+    // Display alert after 2 seconds
+    if (isValid) {
+      // Perform other actions if form is valid
+      refClose.current.click();
+      editTodo(todo.id, todo.etitle, todo.edescription, todo.etag);
+      addTodo(todo.title, todo.description, todo.tag);
+      setTodo({ title: "", description: "", tag: "" });
+
+      setTimeout(() => {
+        alert("Form submitted successfully!");
+      }, 2000);
+    }
   };
 
   const onChange = (e) => {
@@ -57,6 +99,35 @@ const Todos = () => {
     setMode(mode === "light" ? "dark" : "light");
   };
 
+  const filteredTodos = (
+    searchResults.length > 0 ? searchResults : todos
+  ).filter((todo) => {
+    if (filter === "all") {
+      return true;
+    } else if (filter === "active") {
+      return !todo.completed;
+    } else if (filter === "completed") {
+      return todo.completed;
+    }
+  });
+
+  filteredTodos.map((todo) => {
+    return (
+      <TodoItem
+        key={todo._id}
+        updateTodo={updateTodo}
+        mode={mode}
+        handleMode={handleMode}
+        todo={todo}
+      />
+    );
+  });
+
+  const handleFilterChange = (selectedFilter) => {
+    setFilter(selectedFilter);
+  };
+
+  
   return (
     <div className={mode === "dark" ? "dark-mode todos-bg" : "todos-bg"}>
       {/* MODAL */}
@@ -169,8 +240,52 @@ const Todos = () => {
           </div>
         </div>
       </div>
+
+      <div className="d-flex mt-3 position-absolute mx-3 justify-content-start flex-column">
+      <div className="mode position-absolute justify-content-center mx-1">
+        <SearchBar handleSearch={handleSearch} />
+      </div>
+        <div className="filter-container d-flex flex-column mt-3">
+          <Button
+            className={`filter-button ${
+              filter === "all" && "active"
+            } my-1 mt-4 rounded-pill`}
+            onClick={() => handleFilterChange("all")}
+          >
+            <i className="bi bi-three-dots"></i>
+          </Button>
+          <Button
+            className={`filter-button ${
+              filter === "active" && "active"
+            } my-1 rounded-pill`}
+            onClick={() => handleFilterChange("active")}
+          >
+            <i className="bi bi-arrow-down-right-circle"></i>
+          </Button>
+          <Button
+            className={`filter-button ${
+              filter === "completed" && "active"
+            } my-1 rounded-pill`}
+            onClick={() => handleFilterChange("completed")}
+          >
+            <i className="bi bi-check-all"></i>
+          </Button>
+          <Button
+            className="rounded-pill container btn-remove-completed my-1"
+            onClick={handleRemoveCompleted}
+          >
+            <i className="bi bi-trash"></i>
+          </Button>
+        </div>
+      </div>
       <div className="mode d-flex mt-3 justify-content-end">
-      <h6 onClick={handleMode} style={{marginTop: "22px", fontWeight: "700", cursor: "pointer"}}>{ mode === "dark" ? "Light Mode" : "Dark Mode"}</h6>
+        <h6
+          className="smMode"
+          onClick={handleMode}
+          style={{ marginTop: "22px", fontWeight: "700", cursor: "pointer" }}
+        >
+          {mode === "dark" ? "Light Mode" : "Dark Mode"}
+        </h6>
         <i
           onClick={handleMode}
           className={
@@ -205,6 +320,7 @@ const Todos = () => {
                 placeholder="Write your Todo Title"
                 onChange={onChange}
               />
+              {errors.title && <p className="error-message">{errors.title}</p>}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -221,6 +337,9 @@ const Todos = () => {
                 onChange={onChange}
                 placeholder="Write your Todo Description"
               />
+              {errors.description && (
+                <p className="error-message">{errors.description}</p>
+              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -267,9 +386,10 @@ const Todos = () => {
           </h1>
           <h3 className="text-center todos-heading3">
             {todos.length === 0 &&
-              "Oops ! No Todos To Display Try Creating One"}
+              searchResults.length === 0 &&
+              "Oops! No Todos To Display. Try Creating One"}
           </h3>
-          {todos.map((todo) => {
+          {(searchResults.length > 0 ? searchResults : todos).map((todo) => {
             return (
               <TodoItem
                 key={todo._id}

@@ -96,5 +96,23 @@ router.delete('/deletetodo/:id',fetchuser, async (req, res) => {
   }
   })
   
+  router.post("/removecompleted", fetchuser, async (req, res) => {
+    try {
+      // Get the array of completed task IDs
+      const completedTaskIds = req.body.taskIds;
+  
+      // Find and delete the completed todos
+      const deletedTodos = await Todos.deleteMany({
+        _id: { $in: completedTaskIds },
+        user: req.user.id,
+      });
+  
+      res.json({ success: true, message: "Completed tasks removed successfully", deletedCount: deletedTodos.deletedCount });
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Internal server error");
+    }
+  });
 
+  
 export default router;

@@ -78,10 +78,35 @@ const TodoState = (props) => {
           }         
           setTodos(newTodos) 
         }
+// Remove all notes.
+const handleRemoveCompleted = async () => {
+  // Get the array of completed task IDs
+  const completedTaskIds = todos
+    .filter((todo) => todo.completed)
+    .map((todo) => todo._id);
 
+  // API CALL to remove completed tasks
+  const response = await fetch(`${host}/api/todos/removecompleted`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": localStorage.getItem("token"),
+    },
+    body: JSON.stringify({ taskIds: completedTaskIds }),
+  });
+
+  if (response.ok) {
+    // Remove completed tasks from the local state
+    const updatedTodos = todos.filter((todo) => !completedTaskIds.includes(todo._id));
+    setTodos(updatedTodos);
+    console.log("Completed tasks removed successfully.");
+  } else {
+    console.error("Failed to remove completed tasks.");
+  }
+};
 
     return (
-        <TodoContext.Provider value={{ todos,addTodo,deleteTodo, editTodo, getTodos}}>
+        <TodoContext.Provider value={{ todos,addTodo,deleteTodo, editTodo, getTodos, handleRemoveCompleted}}>
             {props.children}
         </TodoContext.Provider>
     )

@@ -302,6 +302,14 @@ i {
     display: flex !important;
     justify-content: center !important;
   }
+
+  .Search-Input{
+    width: 40vw;
+  }
+
+  .smMode{
+    display: none;
+  }
 }
 
 .btn7{
@@ -481,4 +489,48 @@ i {
 
 .navbar-light{
   background-color: black !important;
+}
+
+.btn-search{
+  background-color: transparent;
+  border: none;
+  margin-left: 3px;
+}
+
+.btn-search i{
+  color: rgb(80, 80, 80);
+}
+
+.Search-Input{
+  background-color: transparent;
+  color: #717171;
+  width: 30vw;
+  border-radius: 35px;
+  border: 3px solid rgb(51, 51, 51);
+  padding: 1px 10px;
+  animation: searchShow 0.25s ease ;
+}
+@keyframes searchShow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(20px);
+  }
+}
+
+.Search-Input-none{
+  display: none;
+}
+
+.search-ul{
+  list-style-type: none;
+  margin: 5px 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
 }
