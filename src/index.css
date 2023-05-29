@@ -274,6 +274,11 @@ i {
     display: flex !important;
     justify-content: center !important;
   }
+  .sidebar{
+    flex-direction: row !important;
+    height: 50px;
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -309,6 +314,12 @@ i {
 
   .smMode{
     display: none;
+  }
+
+  .sidebar{
+    flex-direction: row !important;
+    height: 50px;
+    margin-top: 30px;
   }
 }
 
@@ -533,4 +544,10 @@ i {
   font-size: 12px;
   margin-top: 5px;
   text-align: center;
+}
+
+
+.sidebar{
+  margin-top: 40px;
+  flex-direction: column;
 }

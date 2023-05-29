@@ -242,14 +242,14 @@ const Todos = () => {
       </div>
 
       <div className="d-flex mt-3 position-absolute mx-3 justify-content-start flex-column">
-      <div className="mode position-absolute justify-content-center mx-1">
+      <div className="mode position-absolute justify-content-center mx-2">
         <SearchBar handleSearch={handleSearch} />
       </div>
-        <div className="filter-container d-flex flex-column mt-3">
+        <div className="filter-container d-flex sidebar ">
           <Button
             className={`filter-button ${
               filter === "all" && "active"
-            } my-1 mt-4 rounded-pill`}
+            } my-1 mx-1 rounded-pill`}
             onClick={() => handleFilterChange("all")}
           >
             <i className="bi bi-three-dots"></i>
@@ -257,7 +257,7 @@ const Todos = () => {
           <Button
             className={`filter-button ${
               filter === "active" && "active"
-            } my-1 rounded-pill`}
+            } my-1 mx-1 rounded-pill`}
             onClick={() => handleFilterChange("active")}
           >
             <i className="bi bi-arrow-down-right-circle"></i>
@@ -265,13 +265,13 @@ const Todos = () => {
           <Button
             className={`filter-button ${
               filter === "completed" && "active"
-            } my-1 rounded-pill`}
+            } my-1 mx-1 rounded-pill`}
             onClick={() => handleFilterChange("completed")}
           >
             <i className="bi bi-check-all"></i>
           </Button>
           <Button
-            className="rounded-pill container btn-remove-completed my-1"
+            className="rounded-pill btn-remove-completed my-1 mx-1"
             onClick={handleRemoveCompleted}
           >
             <i className="bi bi-trash"></i>
