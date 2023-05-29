@@ -547,6 +547,10 @@ i {
   text-align: center;
 }
 
+.filter-button{
+  background-color: #2a2a2a !important;
+  border: none;
+}
 
 .sidebar{
   margin-top: 40px;

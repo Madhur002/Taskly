@@ -239,7 +239,7 @@ const Todos = () => {
             <i className="bi bi-check-all"></i>
           </Button>
           <Button
-            className="rounded-pill btn-remove-completed my-1 mx-1"
+            className=" filter-button rounded-pill btn-remove-completed my-1 mx-1"
             onClick={handleRemoveCompleted}
           >
             <i className="bi bi-trash"></i>
